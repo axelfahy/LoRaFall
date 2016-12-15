@@ -1,0 +1,233 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Axel Fahy & Höhn Rudolf
+% Automn Semester MSE
+% IV
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{report}
+%\documentclass[twoside, openright]{report}                           % To print on twoside
+\usepackage[a4paper]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[myheadings]{fullpage}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage{hyperref}                                                 % Links are clickable
+\usepackage{url, lipsum}
+\usepackage{parskip}                                                  % Remove identation
+\usepackage{emptypage}                                                % Do not print page number on empty pages
+\usepackage{float}
+\usepackage[absolute]{textpos}
+\usepackage{fancyvrb}
+
+\bibliographystyle{unsrt}
+
+%-------------------------------------------------------------------------------
+% MARGIN SETTINGS
+%-------------------------------------------------------------------------------
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.5cm, % Outer margin
+	bindingoffset=1.5cm, % Binding offset
+	%top=1.5cm, % Top margin
+	%bottom=1.5cm, % Bottom margin
+	%showframe,% show how the type block is set on the page
+}
+
+%-------------------------------------------------------------------------------
+% LIST DIRECTORIES
+%-------------------------------------------------------------------------------
+\usepackage[dvipsnames]{xcolor}                                       % Color names
+\usepackage{dirtree}                                                  % List directories
+\renewcommand*\DTstylecomment{\rmfamily\color{Gray}\textsc}           % Color of comments
+\renewcommand*\DTstyle{\ttfamily\textcolor{OliveGreen}}               % Color of stucture
+\setlength{\DTbaselineskip}{12pt}                                     % Skip between lines
+\DTsetlength{1em}{1em}{0.1em}{1pt}{2pt}                               % Lines format
+
+%-------------------------------------------------------------------------------
+% CODE FORMAT
+%-------------------------------------------------------------------------------
+\usepackage{listings}                                                 % Code listings
+\usepackage{listingsutf8}
+\lstset{inputencoding=utf8/latin1}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{bggray}{rgb}{0.95, 0.95, 0.95}
+\lstset{ %
+    backgroundcolor=\color{bggray},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+    basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+    breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+    breaklines=true,                 % sets automatic line breaking
+    captionpos=b,                    % sets the caption-position to bottom
+    commentstyle=\color{mygreen},    % comment style
+    deletekeywords={}            % if you want to delete keywords from the given language
+    escapeinside={\%*}{*},          % if you want to add LaTeX within your code
+    extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+    frame=single,                    % adds a frame around the code
+    frameround=tttt                  % tttt for having the corner round.
+    keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+    keywordstyle=\color{blue},       % keyword style
+    language=html,                 % the language of the code
+    morekeywords={*},            % if you want to add more keywords to the set
+    numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+    showstringspaces=false,          % underline spaces within strings only
+    showtabs=false,                  % show tabs within strings adding particular underscores
+    stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+    stringstyle=\color{mymauve},     % string literal style
+    tabsize=2,                       % sets default tabsize to 2 spaces
+    title=\lstname}                 % show the filename of files included with \lstinputlisting; also try caption instead of title
+
+%-------------------------------------------------------------------------------
+% COMMAND LINE FORMAT
+%-------------------------------------------------------------------------------
+\lstdefinestyle{CommandLineStyle}{
+    backgroundcolor=\color{black},
+    basicstyle=\color{white}\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    deletekeywords={},
+    escapeinside={\%*}{*},
+    extendedchars=true,
+    frame=none,
+    keepspaces=true,
+    numbers=none,
+    rulecolor=\color{black},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    deletekeywords={default}}
+%-------------------------------------------------------------------------------
+% INLINE FORMAT
+%-------------------------------------------------------------------------------
+\lstdefinestyle{InlineStyle}{
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    deletekeywords={},
+    escapeinside={\%*}{*},
+    extendedchars=true,
+    frame=none,
+    keepspaces=true,
+    keywordstyle=\color{blue},
+    language=java,
+    morekeywords={*},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2}
+
+%-------------------------------------------------------------------------------
+% CODE FORMAT
+%-------------------------------------------------------------------------------
+\definecolor{codegray}{gray}{0.9}
+\newcommand{\code}[1]{{\texttt{#1}}}
+\newcommand{\codeg}[1]{\colorbox{codegray}{\texttt{#1}}}
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\newcommand{\address}[1]{{\texttt{#1}}}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing{}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+\usepackage{titlesec}
+%\titleformat{\chapter}{}{}{0em}{\bf\LARGE}      % Remove the 'Chapter' before each chapter
+%\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge\it}
+\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-50pt}{30pt}      % Change 'before' spacing (default is 50pt) and 'after' spacing (default is 40pt)
+%\makeatletter
+%\renewcommand{\@makechapterhead}[1]{%
+%\vspace*{0 pt}%
+%\bfseries\Huge\thechapter.\ #1
+%\par\nobreak\vspace{40 pt}}}
+%\makeatother
+
+\usepackage{pdfpages}                                                 % To include another pdf
+
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{\textsl{\leftmark}}
+\fancyfoot[L]{\textsl{Axel} FAHY \& \textsl{Rudolf} HÖHN}
+\fancyfoot[R]{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}    % Horizontale line for footer
+% Redefine the plain page style
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}    % Line at the header invisible
+  \renewcommand{\footrulewidth}{0pt}    % Line at the footer visible
+}
+
+\begin{document}
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+\title{LoRa Fall\\Internet of Things\\MSE}
+\date{\today}
+\author{Axel Fahy \& Rudolf Höhn}
+\maketitle
+
+\tableofcontents
+
+\pagestyle{fancy}     % Print page number again
+
+%-------------------------------------------------------------------------------
+% CHAPTER INTRODUCTION
+%-------------------------------------------------------------------------------
+\include{Chapters/ChapterIntro}
+
+%-------------------------------------------------------------------------------
+% CHAPTER SPECIFICATIONS
+%-------------------------------------------------------------------------------
+\include{Chapters/ChapterSpecs}
+
+%-------------------------------------------------------------------------------
+% CHAPTER CONCLUSION
+%-------------------------------------------------------------------------------
+\include{Chapters/ChapterConclusion}
+
+\appendix
+%-------------------------------------------------------------------------------
+% APPENDIX 1
+%-------------------------------------------------------------------------------
+\include{Appendices/Appendix1}
+
+% \begin{table}
+% \caption{Example of a Machine Learning algorithm prediction abilities}
+% \label{tab:ml-example}
+% \centering
+% \begin{tabular}{l l l | l}
+% \toprule
+% \tabhead{Color} & \tabhead{Diameter $[cm]$} & \tabhead{Fruit} & \tabhead{Chances of good prediction}\\
+% \midrule
+% Red & 5 & Apple & Good\\
+% Orange & 5 & Orange & Good\\
+% Orange & 8 & Apple & Very bad\\
+% Yellow & 10 & Orange & Bad\\
+% \bottomrule\\
+% \end{tabular}
+% \end{table}
+
+\end{document}
