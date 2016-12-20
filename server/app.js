@@ -1,4 +1,3 @@
-
 //////////////////
 // Requirements //
 //////////////////
@@ -19,6 +18,8 @@ app.set('view engine', 'jade');
 
 // Express setup
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/node_modules/boostrap/dist/js')));
+app.use(express.static(path.join(__dirname, '/node_modules/boostrap/dist/css')));
 
 // Security - CORS
 app.use(function(req, res, next) {

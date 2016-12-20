@@ -1,20 +1,21 @@
 doctype html
-html(lang='fr')
+html(lang='en')
     head
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1')
+        meta(name='viewport', content='width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1')
+        meta(http-equiv='refresh' content='1')
         title LoRaFall
         block css
-            link(rel="icon" href="/img/tolido.ico" type="image/x-icon")
-            link(rel='stylesheet', href='/components/materialize/dist/css/materialize.min.css')
-            link(rel='stylesheet', href='/components/font-awesome/css/font-awesome.min.css')
-            link(rel='stylesheet', href='/components/animate.css/animate.min.css')
-            link(href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css')
+            link(rel='stylesheet', href='/css/bootstrap.min.css')
+            link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+            link(rel='stylesheet', href='/css/lorafall-style.css')
 
         block js
-            script(src='/components/jquery/dist/jquery.min.js')
-            script(src='/components/materialize/dist/js/materialize.min.js')
-            script(src='/components/jquery-touchswipe/jquery.touchSwipe.min.js')
+            script(src='/bootstrap/dist/js')
+        //    script(src='/components/jquery/dist/jquery.min.js')
+        //    script(src='/components/materialize/dist/js/materialize.min.js')
+        //    script(src='/components/jquery-touchswipe/jquery.touchSwipe.min.js')
 
         body
             block content
