@@ -2,16 +2,20 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Server for LoRaFall project",
-  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
     "lora-packet": "^0.5.3",
     "material-design-icons": "^3.0.1",
+    "path": "^0.12.7",
     "ttn": "^2.0.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kaxl/LoRaFall.git"
