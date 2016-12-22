@@ -1,12 +1,15 @@
 extends layout
 
 block content
-    | !{title}
-    br
-    | !{status}
-    .container
-        .row
-            i.material-icons.md-300 sentiment_very_dissatisfied
-            //i.material-icons.md-300 directions_walk
-            //i.material-icons.md-300 directions_run
+    a.container
+        a.row
+            a.col-xs-12
+                h1.center !{title} !{status}
+                br
+                if status == 0
+                    i.material-icons.md-300.center directions_walk
+                else if status == 1
+                    i.material-icons.md-300.center directions_run
+                else if status == 2
+                    i.material-icons.md-300.center sentiment_very_dissatisfied
 

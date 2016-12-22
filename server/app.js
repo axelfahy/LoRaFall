@@ -6,6 +6,9 @@ var path = require('path');
 
 var routes = require('./routes/index');
 
+// Client LoRa
+var client = require('./client');
+
 var app = express();
 
 ///////////
@@ -57,3 +60,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+

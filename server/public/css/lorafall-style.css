@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: #39CCCC;
 }
 
 /* Size of material-icons */
@@ -12,9 +12,10 @@ body {
 
 /* Center the icon */
 .center {
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
     display: inline-block;
     vertical-align: middle;
-    text-align: center;
     float: none;
 }
-
