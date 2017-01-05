@@ -1,0 +1,13 @@
+Server part of the LoRaFall application.
+
+Installation
+============
+
+npm install package.json
+
+Execution
+=========
+
+npm start
+
+Page is on port 5000
