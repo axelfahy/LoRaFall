@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 		title: "IoT",
         //status: status[Math.floor(Math.random() * status.length)]
         //status: client
-        status: VALUE
+        status: STATUS
 	});
 });
 

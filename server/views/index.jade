@@ -4,12 +4,16 @@ block content
     a.container
         a.row
             a.col-xs-12
-                h1.center !{title} !{status}
+                h1.center !{title}
                 br
-                if status == 0
-                    i.material-icons.md-300.center directions_walk
-                else if status == 1
-                    i.material-icons.md-300.center directions_run
-                else if status == 2
-                    i.material-icons.md-300.center sentiment_very_dissatisfied
+                each value, key in status
+                    if value == 0
+                        i.material-icons.md-60.center nature_people
+                    else if value == 1
+                        i.material-icons.md-60.center directions_walk
+                    else if value == 2
+                        i.material-icons.md-60.center directions_run
+                    else if value == 3
+                        i.material-icons.md-60.center sentiment_very_dissatisfied
+                    h4.center=key
 
