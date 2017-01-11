@@ -1,19 +1,21 @@
 extends layout
 
 block content
-    a.container
-        a.row
-            a.col-xs-12
+    div.container
+        div.row
+            div.col-xs-12
                 h1.center !{title}
-                br
                 each value, key in status
                     if value == 0
-                        i.material-icons.md-60.center nature_people
+                        i.material-icons.md-60.center_img nature_people
                     else if value == 1
-                        i.material-icons.md-60.center directions_walk
+                        i.material-icons.md-60.center_img directions_walk
                     else if value == 2
-                        i.material-icons.md-60.center directions_run
+                        i.material-icons.md-60.center_img directions_run
                     else if value == 3
-                        i.material-icons.md-60.center sentiment_very_dissatisfied
+                        i.material-icons.md-60.center_img sentiment_very_dissatisfied
                     h4.center=key
+                    div.center
+                        button(onclick="javascript:$.get('/downlink/#{key}')").btn.btn-default Notify device
+
 

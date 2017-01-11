@@ -1,5 +1,6 @@
 body {
-    background-color: #39CCCC;
+    /*background-color: #39CCCC;*/
+    background-color: #DDDDDD;
 }
 
 /* Size of material-icons */
@@ -11,11 +12,15 @@ body {
 .material-icons.md-300 { font-size: 300px; }
 
 /* Center the icon */
-.center {
-    margin-top: 5%;
+.center_img {
+    margin-top: 2%;
     width: 100%;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
     float: none;
+}
+
+.center {
+    text-align: center;
 }

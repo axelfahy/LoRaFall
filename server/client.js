@@ -9,7 +9,7 @@ var accessKey = 'ttn-account-v2.DolaWum8-C5ipsWb_dcArHfvdpNcCaBq-oGGtuxi5fw';
 var state = ['still', 'walk', 'run', 'fall'];
 // Status used in the app
 // Dictionary of status with MAC as key and event number as value for each client.
-STATUS = {'0b0b448c99d3': 1, '0b0b448c99d2': 2}; // Init values to simulate devices
+STATUS = {};
 
 var client = new ttn.Client(region, appId, accessKey);
 
@@ -32,14 +32,18 @@ client.on('activation', function(deviceId, data) {
 client.on('message', function(deviceId, data) {
     console.info('[INFO] ', 'Message:', deviceId, JSON.stringify(data, null, 2));
     var buffer = new Buffer(data.payload_raw, 'hex');
-    // Message format : MAC[14] EVENT_NUMBER[1] (no separation between the two)
-    var mac = buffer.slice(0, buffer.length - 1).toString('hex');
+    // Message format : DEVICE_ID EVENT_NUMBER[1] (no separation between the two)
+    var device_id = buffer.slice(0, buffer.length - 1).toString('hex');
+    var device_string = Buffer.from(device_id, 'hex').toString();
+
+    //var device_id = buffer.slice(0, buffer.length - 1).toString;
     var event_number = buffer.slice(buffer.length - 1).readUIntBE(0, 1);
-    console.log("MAC[14]=", mac);
-    console.log("Event  =", event_number);
+    console.log("DEVICE_ID     =", device_string);
+    console.log("DEVICE_STRING =", device_id);
+    console.log("Event         =", event_number);
     // Maj page
     // Set the status of the device
-    STATUS[mac] = event_number;
+    STATUS[device_string] = event_number;
     console.log(STATUS);
     // Reload the page
     // TODO Reload the page from here instead of every minute in the html page

@@ -21,8 +21,9 @@ app.set('view engine', 'jade');
 
 // Express setup
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '/node_modules/boostrap/dist/js')));
-app.use(express.static(path.join(__dirname, '/node_modules/boostrap/dist/css')));
+app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
+app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 
 // Security - CORS
 app.use(function(req, res, next) {
@@ -36,6 +37,8 @@ app.use(function(req, res, next) {
 ////////////
 
 app.use('/', routes);
+
+app.use('/downlink', routes);
 
 ////////////////////
 // Error handlers //
