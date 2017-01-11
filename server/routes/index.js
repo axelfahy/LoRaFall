@@ -16,4 +16,12 @@ router.get('/', function (req, res) {
 	});
 });
 
+/* Downlink request. */
+router.get('/downlink/:device', function (req, res) {
+    var device = req.params.device;
+    console.log("Sending a downlink to " + device);
+    client.send(device, new Buffer([0x01]));
+    res.send(true);
+});
+
 module.exports = router;
